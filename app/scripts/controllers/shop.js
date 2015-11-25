@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name angularBoilerplateApp.controller:GalleryCtrl
+ * @name angularBoilerplateApp.controller:ShopCtrl
  * @description
- * # GalleryCtrl
+ * # ShopCtrl
  * Controller of the angularBoilerplateApp
  */
 angular.module('angularBoilerplateApp')
-  .controller('GalleryCtrl', function ($scope, $http) {
+  .controller('ShopCtrl', function ($scope, $http) {
 
 	$scope.items = null;
 	$scope.loadingStatus = "loading";
@@ -24,4 +24,3 @@ angular.module('angularBoilerplateApp')
         });
 
   });
-

@@ -19,17 +19,9 @@ angular.module('angularBoilerplateApp')
         title: 'Home',
         path: '#/'
     }, {
-        id: 'about',
-        title: 'About',
-        path: '#/about'
-    }, {
-        id: 'waypoint',
-        title: 'Waypoint',
-        path: '#/waypoint'
-    }, {
-        id: 'gallery',
-        title: 'Gallery',
-        path: '#/gallery'
+        id: 'shop',
+        title: 'Shop',
+        path: '#/shop'
     }];
 
     // declare default activeItem
