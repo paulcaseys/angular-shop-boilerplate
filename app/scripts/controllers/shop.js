@@ -10,6 +10,9 @@
 angular.module('angularBoilerplateApp')
   .controller('ShopCtrl', function ($scope, $http) {
 
+    // declares that the transition in should begin
+    $scope.transitionIn = true;
+    
 	$scope.items = null;
 	$scope.loadingStatus = "loading";
 
