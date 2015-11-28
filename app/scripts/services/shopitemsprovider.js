@@ -11,14 +11,14 @@ angular.module('angularBoilerplateApp')
   .provider('shopItemsProvider', function () {
 
     var baseUrl = 'http://cosmosis-api.com/api/service/data/format/jsonp/?';
-    var _projectName = 'SummerAtTarget';
-    var _projectPassword = '6CB4816A23A965B5DFD58E45F4C23';
+    var _projectName = 'shopItems';
+    var _projectPassword = '12bf141bf2fbcf61693fc2b2b61c44e5';
     var _table = 'unique_references';
     var _batch = '1';
     var _batchSize = '6';
-    var _whereConditionArray = 'project_id||9';
+    var _whereConditionArray = 'project_id||118';
     var _select = '*';
-    var _orderBy = 'vote_count||desc';
+    var _orderBy = 'unique_reference_id||desc';
     var _callback = '?';
     var _type = '';
     var _finalUrl = '';

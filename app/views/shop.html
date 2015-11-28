@@ -16,17 +16,25 @@
 
 	<div class="loaded" ng-show="loadingStatus == 'loaded'">
 
-		<div class="item" ng-repeat="item in items track by $index" >
-		    <div class="row">
-		    	<div class="four columns">
-					<img class="u-max-full-width" ng-src="{{item.uploaded_images[0].uploaded_image_path_500}}">
-				</div>
-		    	<div class="eight columns">
+			<div class="row"  
+			ng-repeat="item in items track by $index"  
+			ng-if="$index % 4 == 0">
+
+		    	<div class="three columns"  
+				ng-repeat="i in [$index, $index + 1, $index + 2, $index + 3]" 
+				ng-if="items[i] != null" >
+
+					<img class="u-max-full-width" ng-src="{{items[i].uploaded_images[0].uploaded_image_path_500}}">
 					<p>
-						{{item.page_title}}
+						{{items[i].page_title}}
+						<br>
+						{{items[i].detail_Gen1 | currency}}
 					</p>
-				</div>
-		    </div>
+
+				</div>	
+
+			</div>
+
 		</div>
 
 	</div>
