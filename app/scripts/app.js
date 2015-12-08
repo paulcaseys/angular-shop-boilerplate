@@ -29,6 +29,16 @@ angular
         controller: 'ShopCtrl',
         controllerAs: 'shop'
       })
+      .when('/shop/:filterType', {
+        templateUrl: 'views/shop.html',
+        controller: 'ShopCtrl',
+        controllerAs: 'shop'
+      })
+      .when('/item', {
+        templateUrl: 'views/shop.html',
+        controller: 'ShopCtrl',
+        controllerAs: 'shop'
+      })
       .otherwise({
         redirectTo: '/'
       });

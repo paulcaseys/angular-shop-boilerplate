@@ -8,7 +8,7 @@
  * Controller of the angularBoilerplateApp
  */
 angular.module('angularBoilerplateApp')
-  .controller('ShopCtrl', function ($scope, shopItemsProvider) {
+  .controller('ShopCtrl', function ($scope, $routeParams, shopItemsProvider) {
 
     // declares that the transition in should begin
     $scope.transitionIn = true;
@@ -16,6 +16,16 @@ angular.module('angularBoilerplateApp')
     $scope.items = null;
     $scope.loadingStatus = "loading";
 
+    // checks for filters
+    var originalWhereFilter = shopItemsProvider.getWhereConditionArray().split(",")[0];
+    if(typeof $routeParams.filterType === 'undefined') {
+      shopItemsProvider.setWhereConditionArray(originalWhereFilter);
+    } else {
+      shopItemsProvider.setWhereConditionArray(originalWhereFilter+',classification_1||'+$routeParams.filterType);
+      console.log(shopItemsProvider.getWhereConditionArray);
+    }
+
+    // sets batch size
     shopItemsProvider.setBatch('1');
     shopItemsProvider.setBatchSize('8');
 
@@ -31,7 +41,7 @@ angular.module('angularBoilerplateApp')
         });
     };
 
-    $scope.submitShop();
 
+    $scope.submitShop();
 
   });
