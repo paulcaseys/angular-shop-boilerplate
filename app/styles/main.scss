@@ -144,6 +144,13 @@ h1 {
 //////////////////////////////////////
 // SHOP PAGE
 
+
+.shop-filter { margin-bottom: 20px; background: #fff;  height: 40px; text-align: left;   overflow: hidden; border-bottom: 1px solid #e1e1e1;}
+.shop-filter ul {  list-style: none;  margin: 0; padding: 0;}
+.shop-filter ul li { cursor: pointer; float: left;  margin-right: 20px; font-size: emCalc(12px); color: #777;  line-height: 40px;  text-decoration: none;}
+.shop-filter ul li.active {  color: #ee9999;}
+
+
 .shop .item {
   width: 100%;
   float: left;

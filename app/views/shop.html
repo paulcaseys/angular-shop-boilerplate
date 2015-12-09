@@ -15,30 +15,34 @@
 	</div>
 
 	<div class="loaded" ng-show="loadingStatus == 'loaded'">
+				
+		<div ng-controller="ShopFilterCtrl" class="shop-filter" >
+        	<ul>
+        		<li ng-repeat="item in items track by $index" ng-class="{'active': item.id == states.activeItem}" ng-click="changePage(item.id)">{{item.title}}</li>
+        	</ul>
+	    </div>
 
-			<div class="row"  
-			ng-repeat="item in items track by $index"  
-			ng-if="$index % 4 == 0">
+		<div class="row"  
+		ng-repeat="item in items track by $index"  
+		ng-if="$index % 4 == 0">
 
-		    	<div class="three columns"  
-				ng-repeat="i in [$index, $index + 1, $index + 2, $index + 3]" 
-				ng-if="items[i] != null" >
+	    	<div class="three columns"  
+			ng-repeat="i in [$index, $index + 1, $index + 2, $index + 3]" 
+			ng-if="items[i] != null" >
 
-					<img class="u-max-full-width" ng-src="{{items[i].uploaded_images[0].uploaded_image_path_500}}">
-					<p>
-						{{items[i].page_title}}
-						<br>
-						{{items[i].detail_Gen1 | currency}}
-					</p>
+				<img class="u-max-full-width" ng-src="{{items[i].uploaded_images[0].uploaded_image_path_500}}">
+				<p>
+					{{items[i].page_title}}
+					<br>
+					{{items[i].detail_Gen1 | currency}}
+				</p>
 
-				</div>	
-
-			</div>
+			</div>	
 
 		</div>
 
 	</div>
 
-
-
 </div>
+
+
