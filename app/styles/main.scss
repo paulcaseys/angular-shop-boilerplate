@@ -166,11 +166,6 @@ h1 {
 }
 
 // transition example for shop page
-.shop.transitionIn h1 {
-  opacity: 0;
-  //$delay, $duration, $iteration, $animation, $speed-curve
-  @include animation(0s, 2s, 1, fadeInAnimation, 'ease-out');
-}
 .shop.transitionIn p {
   opacity: 0;
   //$delay, $duration, $iteration, $animation, $speed-curve

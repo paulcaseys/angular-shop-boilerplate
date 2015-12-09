@@ -2,6 +2,12 @@
 
 	<h1>Shop</h1>
 	
+	<div ng-controller="ShopFilterCtrl" class="shop-filter" >
+    	<ul>
+    		<li ng-repeat="item in items track by $index" ng-class="{'active': item.id == states.activeItem}" ng-click="changePage(item.id)">{{item.title}}</li>
+    	</ul>
+    </div>
+	
 	<div class="loaded" ng-show="loadingStatus == 'loading'">
 		<p>
 			loading...
@@ -15,12 +21,6 @@
 	</div>
 
 	<div class="loaded" ng-show="loadingStatus == 'loaded'">
-				
-		<div ng-controller="ShopFilterCtrl" class="shop-filter" >
-        	<ul>
-        		<li ng-repeat="item in items track by $index" ng-class="{'active': item.id == states.activeItem}" ng-click="changePage(item.id)">{{item.title}}</li>
-        	</ul>
-	    </div>
 
 		<div class="row"  
 		ng-repeat="item in items track by $index"  
@@ -32,9 +32,9 @@
 
 				<img class="u-max-full-width" ng-src="{{items[i].uploaded_images[0].uploaded_image_path_500}}">
 				<p>
-					{{items[i].page_title}}
+					<span class"item-title">{{items[i].page_title}}</span>
 					<br>
-					{{items[i].detail_Gen1 | currency}}
+					<span class"item-price">{{items[i].detail_Gen1 | currency}}</span>
 				</p>
 
 			</div>	
