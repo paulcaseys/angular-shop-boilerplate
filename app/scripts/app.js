@@ -34,6 +34,11 @@ angular
         controller: 'ShopCtrl',
         controllerAs: 'shop'
       })
+      .when('/shop/item/:filterType', {
+        templateUrl: 'views/shop-item.html',
+        controller: 'ShopItemCtrl',
+        controllerAs: 'shopItem'
+      })
       .when('/item', {
         templateUrl: 'views/shop.html',
         controller: 'ShopCtrl',
