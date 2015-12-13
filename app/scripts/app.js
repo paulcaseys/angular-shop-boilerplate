@@ -29,17 +29,12 @@ angular
         controller: 'ShopCtrl',
         controllerAs: 'shop'
       })
-      .when('/shop/:filterType', {
-        templateUrl: 'views/shop.html',
-        controller: 'ShopCtrl',
-        controllerAs: 'shop'
-      })
-      .when('/shop/item/:filterType', {
+      .when('/shop/item/:itemId', {
         templateUrl: 'views/shop-item.html',
         controller: 'ShopItemCtrl',
         controllerAs: 'shopItem'
       })
-      .when('/item', {
+      .when('/shop/:filterType', {
         templateUrl: 'views/shop.html',
         controller: 'ShopCtrl',
         controllerAs: 'shop'
