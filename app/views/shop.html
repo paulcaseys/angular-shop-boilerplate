@@ -30,12 +30,16 @@
 			ng-repeat="i in [$index, $index + 1, $index + 2, $index + 3]" 
 			ng-if="items[i] != null" >
 
-				<img class="u-max-full-width" ng-src="{{items[i].uploaded_images[0].uploaded_image_path_500}}">
-				<p>
-					<span class"item-title">{{items[i].page_title}}</span>
-					<br>
-					<span class"item-price">{{items[i].detail_Gen1 | currency}}</span>
-				</p>
+				<div ng-click="gotoItem('{{items[i].unique_reference_id}}', '{{items[i].page_title}}')" >
+
+					<img class="u-max-full-width" ng-src="{{items[i].uploaded_images[0].uploaded_image_path_500}}">
+					<p>
+						<span class"item-title">{{items[i].page_title}}</span>
+						<br>
+						<span class"item-price">{{items[i].detail_Gen1 | currency}}</span>
+					</p>
+
+				</div>
 
 			</div>	
 

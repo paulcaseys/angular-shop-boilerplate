@@ -8,7 +8,7 @@
  * Controller of the angularBoilerplateApp
  */
 angular.module('angularBoilerplateApp')
-  .controller('ShopCtrl', function ($scope, $routeParams, shopItemsProvider) {
+  .controller('ShopCtrl', function ($scope, $routeParams, $location, shopItemsProvider) {
 
     // declares that the transition in should begin
     $scope.transitionIn = true;
@@ -39,6 +39,13 @@ angular.module('angularBoilerplateApp')
           $scope.loadingStatus = "error";
           console.log(data);
         });
+    };
+
+    $scope.gotoItem = function(itemId, title){  
+      var titleConverted = title.replace(/\s+/g, '-').toLowerCase();
+      var newPath = "shop/item/"+itemId+"/"+titleConverted;
+      $location.path(newPath);
+      //$scope.changeActiveItem();
     };
 
 
