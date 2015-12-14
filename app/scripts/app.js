@@ -29,17 +29,19 @@ angular
         controller: 'ShopCtrl',
         controllerAs: 'shop'
       })
-      .when('/shop/item/:itemId', {
-        templateUrl: 'views/shop-item.html',
-        controller: 'ShopItemCtrl',
-        controllerAs: 'shopItem'
-      })
       .when('/shop/:filterType', {
         templateUrl: 'views/shop.html',
         controller: 'ShopCtrl',
         controllerAs: 'shop'
       })
+      .when('/shop/item/:itemId/:itemTitle', {
+        templateUrl: 'views/shop-item.html',
+        controller: 'ShopItemCtrl',
+        controllerAs: 'shopItem'
+      })
       .otherwise({
         redirectTo: '/'
       });
+
+
   });

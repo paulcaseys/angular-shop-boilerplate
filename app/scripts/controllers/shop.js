@@ -15,7 +15,7 @@ angular.module('angularBoilerplateApp')
     
     $scope.items = null;
     $scope.loadingStatus = "loading";
-
+    
     // checks for filters
     var originalWhereFilter = shopItemsProvider.getWhereConditionArray().split(",")[0];
     if(typeof $routeParams.filterType === 'undefined') {
@@ -32,7 +32,7 @@ angular.module('angularBoilerplateApp')
     $scope.submitShop = function(){
       shopItemsProvider.callShop()
         .then(function(data){
-          $scope.items = JSON.parse(data.substring(1, data.length-1).substr(1));
+          $scope.items = data;
           $scope.loadingStatus = "loaded";
           console.log($scope.items);
         }, function(data){

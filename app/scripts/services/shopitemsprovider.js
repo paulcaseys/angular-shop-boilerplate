@@ -11,6 +11,7 @@ angular.module('angularBoilerplateApp')
   .provider('shopItemsProvider', function () {
 
     var baseUrl = 'http://cosmosis-api.com/api/service/data/format/jsonp/?';
+    var _response = null;
     var _projectName = 'shopItems';
     var _projectPassword = '12bf141bf2fbcf61693fc2b2b61c44e5';
     var _table = 'unique_references';
@@ -39,6 +40,10 @@ angular.module('angularBoilerplateApp')
       return _finalUrl;
     };
 
+    var saveResponse = function(data){
+      _response = data;
+    };
+
     this.$get = function($http, $q){
       return {
         callShop: function(){
@@ -47,11 +52,19 @@ angular.module('angularBoilerplateApp')
           var deferred = $q.defer();
           $http.get( _finalUrl
           ).success(function(data){
-            deferred.resolve(data);
+            var parsedData = JSON.parse(data.substring(1, data.length-1).substr(1));
+            deferred.resolve(parsedData);
+            saveResponse(parsedData);
           }).error(function(){
             deferred.reject('There was an error');
           });
           return deferred.promise;
+        },
+        setResponse: function(response){
+          _response = response;
+        },
+        getResponse: function(){
+          return _response;
         },
         setType: function(type){
           _type = type;

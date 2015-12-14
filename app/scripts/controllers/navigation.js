@@ -29,7 +29,9 @@ angular.module('angularBoilerplateApp')
 
     // checks which item matches the path
     $scope.changeActiveItem = function(){
-        var path = "#"+$location.path();
+        var pathString = $location.path();
+        var pathArray = pathString.split('/');
+        var path = "#/"+pathArray[1];
         var lookup = {};
         for (var i = 0, len = $scope.items.length; i < len; i++) {
             lookup = $scope.items[i];

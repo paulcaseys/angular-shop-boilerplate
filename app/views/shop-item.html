@@ -1,1 +1,26 @@
-<p>This is the shop-item view {{itemId}}</p>
+<div class="shop-item"  ng-class="{transitionIn: transitionIn}">
+
+    
+    
+    
+    <div class="loaded" ng-show="loadingStatus == 'loading'">
+        <p>
+            loading...
+        </p>
+    </div>
+
+    <div class="loaded" ng-show="loadingStatus == 'error'">
+        <p>
+            oops, something went wrong. try refreshing the page.
+        </p>
+    </div>
+
+    <div class="loaded" ng-show="loadingStatus == 'loaded'">
+        <h1>{{item.page_title}}</h1>
+        {{item.page_summary}}
+
+    </div>
+
+</div>
+
+
