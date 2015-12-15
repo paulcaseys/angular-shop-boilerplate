@@ -150,6 +150,9 @@ h1 {
 .shop-filter ul li { cursor: pointer; float: left;  margin-right: 20px; font-size: emCalc(12px); color: #777;  line-height: 40px;  text-decoration: none;}
 .shop-filter ul li.active {  color: #ee9999;}
 
+.shop .clickable-item {
+  cursor: pointer;
+}
 
 .shop .item {
   width: 100%;

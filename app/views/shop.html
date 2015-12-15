@@ -24,13 +24,14 @@
 
 		<div class="row"  
 		ng-repeat="item in items track by $index"  
-		ng-if="$index % 4 == 0">
+		ng-if="$index % 3 == 0">
 
-	    	<div class="three columns"  
-			ng-repeat="i in [$index, $index + 1, $index + 2, $index + 3]" 
+	    	<div class="four columns"  
+			ng-repeat="i in [$index, $index + 1, $index + 2]" 
 			ng-if="items[i] != null" >
 
-				<div ng-click="gotoItem('{{items[i].unique_reference_id}}', '{{items[i].page_title}}')" >
+				<div class="clickable-item"
+				ng-click="gotoItem('{{items[i].unique_reference_id}}', '{{items[i].page_title}}')" >
 
 					<img class="u-max-full-width" ng-src="{{items[i].uploaded_images[0].uploaded_image_path_500}}">
 					<p>
