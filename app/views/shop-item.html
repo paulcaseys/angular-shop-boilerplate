@@ -16,8 +16,20 @@
     </div>
 
     <div class="loaded" ng-show="loadingStatus == 'loaded'">
-        <h1>{{item.page_title}}</h1>
-        {{item.page_summary}}
+
+        <div class="row">
+            <div class="eight columns">
+                <img class="u-max-full-width" ng-src="{{item.uploaded_images[0].uploaded_image_path_original}}">
+            </div>
+            <div class="four columns">
+
+                <h1>{{item.page_title}}</h1>
+                <p>{{item.page_summary}}</p>
+                <h2>{{item.detail_Gen1 | currency}}</h2>
+                <button class="button" ng-click="addToCart()">add to cart</button>
+
+            </div>
+        </div>
 
     </div>
 

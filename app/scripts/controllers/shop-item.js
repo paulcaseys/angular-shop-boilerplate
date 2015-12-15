@@ -21,11 +21,12 @@ angular.module('angularBoilerplateApp')
     } else {
       $scope.itemId = $routeParams.itemId;
     }
-    //$scope.itemId = "unique3996";
 
+
+    ///////////////////////
+    // LOADS DATA FROM SHOP
     
     $scope.submitShop = function(){
-
 
       var originalWhereFilter = shopItemsProvider.getWhereConditionArray().split(",")[0];
       shopItemsProvider.setWhereConditionArray(originalWhereFilter+',unique_reference_id||'+$scope.itemId);
@@ -51,8 +52,9 @@ angular.module('angularBoilerplateApp')
     };
 
 
-
-    // the existing respons
+    //////////////////////////
+    // the existing response
+    
     var existingResponse = shopItemsProvider.getResponse();
 
     // checks if data has been loaded before
@@ -92,6 +94,14 @@ angular.module('angularBoilerplateApp')
         $scope.loadingStatus = "loaded";
       }
     }
+
+
+    ///////////////////////
+    // CART
+    
+    $scope.addToCart = function(){
+      console.log("adding to cart");
+    };
     
 
   });
