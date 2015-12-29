@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc service
- * @name angularBoilerplateApp.shopItemsProvider
+ * @name angularBoilerplateApp.ShopItemsProvider
  * @description
- * # shopItemsProvider
+ * # ShopItemsProvider
  * Provider in the angularBoilerplateApp.
  */
 angular.module('angularBoilerplateApp')
-  .provider('shopItemsProvider', function () {
+  .provider('ShopItemsProvider', function () {
 
     var baseUrl = 'http://cosmosis-api.com/api/service/data/format/jsonp/?';
     var _response = null;

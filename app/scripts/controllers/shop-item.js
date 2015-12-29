@@ -8,7 +8,7 @@
  * Controller of the angularBoilerplateApp
  */
 angular.module('angularBoilerplateApp')
-  .controller('ShopItemCtrl', function ($scope, $routeParams, shopItemsProvider) {
+  .controller('ShopItemCtrl', function ($scope, $routeParams, ShopItemsProvider) {
     
     // declares that the transition in should begin
     $scope.transitionIn = true;
@@ -28,15 +28,15 @@ angular.module('angularBoilerplateApp')
     
     $scope.submitShop = function(){
 
-      var originalWhereFilter = shopItemsProvider.getWhereConditionArray().split(",")[0];
-      shopItemsProvider.setWhereConditionArray(originalWhereFilter+',unique_reference_id||'+$scope.itemId);
+      var originalWhereFilter = ShopItemsProvider.getWhereConditionArray().split(",")[0];
+      ShopItemsProvider.setWhereConditionArray(originalWhereFilter+',unique_reference_id||'+$scope.itemId);
       //
 
       // sets batch size
-      shopItemsProvider.setBatch('1');
-      shopItemsProvider.setBatchSize('1');
+      ShopItemsProvider.setBatch('1');
+      ShopItemsProvider.setBatchSize('1');
 
-      shopItemsProvider.callShop()
+      ShopItemsProvider.callShop()
         .then(function(data){
           if(typeof data[0] === 'undefined'){
             $scope.loadingStatus = "error";
@@ -55,7 +55,7 @@ angular.module('angularBoilerplateApp')
     //////////////////////////
     // the existing response
     
-    var existingResponse = shopItemsProvider.getResponse();
+    var existingResponse = ShopItemsProvider.getResponse();
 
     // checks if data has been loaded before
     if(existingResponse === null) {

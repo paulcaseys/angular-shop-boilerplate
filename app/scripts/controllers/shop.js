@@ -8,7 +8,7 @@
  * Controller of the angularBoilerplateApp
  */
 angular.module('angularBoilerplateApp')
-  .controller('ShopCtrl', function ($scope, $routeParams, $location, shopItemsProvider) {
+  .controller('ShopCtrl', function ($scope, $routeParams, $location, ShopItemsProvider) {
 
     // declares that the transition in should begin
     $scope.transitionIn = true;
@@ -17,20 +17,20 @@ angular.module('angularBoilerplateApp')
     $scope.loadingStatus = "loading";
     
     // checks for filters
-    var originalWhereFilter = shopItemsProvider.getWhereConditionArray().split(",")[0];
+    var originalWhereFilter = ShopItemsProvider.getWhereConditionArray().split(",")[0];
     if(typeof $routeParams.filterType === 'undefined') {
-      shopItemsProvider.setWhereConditionArray(originalWhereFilter);
+      ShopItemsProvider.setWhereConditionArray(originalWhereFilter);
     } else {
-      shopItemsProvider.setWhereConditionArray(originalWhereFilter+',classification_1||'+$routeParams.filterType);
-      console.log(shopItemsProvider.getWhereConditionArray);
+      ShopItemsProvider.setWhereConditionArray(originalWhereFilter+',classification_1||'+$routeParams.filterType);
+      console.log(ShopItemsProvider.getWhereConditionArray);
     }
 
     // sets batch size
-    shopItemsProvider.setBatch('1');
-    shopItemsProvider.setBatchSize('8');
+    ShopItemsProvider.setBatch('1');
+    ShopItemsProvider.setBatchSize('8');
 
     $scope.submitShop = function(){
-      shopItemsProvider.callShop()
+      ShopItemsProvider.callShop()
         .then(function(data){
           $scope.items = data;
           $scope.loadingStatus = "loaded";
