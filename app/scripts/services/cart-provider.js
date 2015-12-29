@@ -63,8 +63,8 @@ angular.module('angularBoilerplateApp')
           cartItemsLength = _cartItems.length;
           i = 0;
           for (i = 0; i < cartItemsLength; i++) {
-            //_cartItemsTotalPrice++;
-            _cartItemsTotalPrice =+ parseInt(_cartItems[i].detail_Gen1, 10)*_cartItems[i].amount;
+            console.log('test');
+            _cartItemsTotalPrice = _cartItemsTotalPrice + (parseInt(_cartItems[i].detail_Gen1, 10)*_cartItems[i].amount);
           }
 
 
