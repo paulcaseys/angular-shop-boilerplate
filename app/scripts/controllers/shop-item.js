@@ -8,7 +8,7 @@
  * Controller of the angularBoilerplateApp
  */
 angular.module('angularBoilerplateApp')
-  .controller('ShopItemCtrl', function ($scope, $routeParams, ShopItemsProvider) {
+  .controller('ShopItemCtrl', function ($scope, $routeParams, ShopItemsProvider, CartProvider) {
     
     // declares that the transition in should begin
     $scope.transitionIn = true;
@@ -100,7 +100,8 @@ angular.module('angularBoilerplateApp')
     // CART
     
     $scope.addToCart = function(){
-      console.log("adding to cart");
+      CartProvider.addItemToCart($scope.item);
+      CartProvider.notifyObservers();
     };
     
 

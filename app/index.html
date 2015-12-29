@@ -39,11 +39,16 @@
 
     <div class="ng-cloak" >
 
-      <nav ng-controller="NavigationCtrl" class="navigation" >
+      <nav class="navigation" >
         <div class="container">
-          <ul>
-            <li ng-repeat="item in items track by $index" class="item" ng-class="{'active': item.id == states.activeItem}" ng-click="changePage(item.id)">{{item.title}}</li>
-          </ul>
+          <div ng-controller="NavigationCtrl" >
+            <ul>
+              <li ng-repeat="item in items track by $index" class="item" ng-class="{'active': item.id == states.activeItem}" ng-click="changePage(item.id)">{{item.title}}</li>
+            </ul>
+          </div>
+          <div class="cart" ng-controller="ShopCartNavigationCtrl">
+            Cart: {{cartItemsTotalPrice | currency}} ({{cartItemsTotalItems}})
+          </div>
         </div>
       </nav>
 
@@ -111,6 +116,7 @@
         <script src="scripts/controllers/shop-item.js"></script>
         <script src="scripts/services/shop-items-provider.js"></script>
         <script src="scripts/services/cart-provider.js"></script>
+        <script src="scripts/controllers/shop-cart-navigation.js"></script>
         <!-- endbuild -->
 </body>
 </html>

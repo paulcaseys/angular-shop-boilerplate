@@ -118,6 +118,12 @@ h4 {
 .navigation ul li { cursor: pointer; float: left;  margin-right: 20px; font-size: emCalc(12px); color: #777;  line-height: 40px;  text-decoration: none;}
 .navigation ul li.active {  color: #ee9999;}
 
+//////////////////////////////////////
+// CART NAVIGATION
+.navigation .cart {
+  font-size: emCalc(12px); color: #777;  line-height: 40px;  text-decoration: none;
+}
+
 
 //////////////////////////////////////
 // FOOTER
