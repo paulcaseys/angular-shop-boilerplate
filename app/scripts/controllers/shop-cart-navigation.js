@@ -13,7 +13,7 @@ angular.module('angularBoilerplateApp')
 	$scope.cartItems = CartProvider.getCartItems();
 	$scope.cartItemsTotalItems = CartProvider.getCartItemsTotalItems();
 	$scope.cartItemsTotalPrice = CartProvider.getCartItemsTotalPrice();
-    $scope.cartItemsMessage = "there are currently no items in your cart";
+    $scope.cartItemsMessage = "There are currently no items in your cart.";
 	
     var updatedCart = function(){
 		console.log("CART UPDATED");
