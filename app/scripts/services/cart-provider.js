@@ -15,7 +15,6 @@ angular.module('angularBoilerplateApp')
     var _cartItemsTotalItems = 0;
     var _cartItemsTotalPrice = 0;
     var observerCallbacks = [];
-    //var _rScope = $injector.get('$rootScope');
     
     this.$get = function(){
       return {
@@ -24,12 +23,13 @@ angular.module('angularBoilerplateApp')
           observerCallbacks.push(callback);
         },
 
-        //call this when you know 'foo' has been changed
+        //call this when you know cart has been changed
         notifyObservers: function(){
           angular.forEach(observerCallbacks, function(callback){
             callback();
           });
         },
+
         addItemToCart: function(newItem){
           console.log('addItemToCart');
 

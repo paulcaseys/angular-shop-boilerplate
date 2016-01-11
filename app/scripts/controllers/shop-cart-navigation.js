@@ -21,7 +21,7 @@ angular.module('angularBoilerplateApp')
 		$scope.cartItemsTotalPrice = CartProvider.getCartItemsTotalPrice();
 	};
 
-	//$scope. = CartProvider.get;
+	// observes provider for updates
 	CartProvider.registerObserverCallback(updatedCart);
 
     console.log("ShopCartNavigationCtrl");
