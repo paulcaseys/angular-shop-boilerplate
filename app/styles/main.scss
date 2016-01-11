@@ -113,16 +113,41 @@ h4 {
 //////////////////////////////////////
 // NAVIGATION
 
-.navigation {  background: #fff;  height: 40px; text-align: right;   overflow: hidden; border-bottom: 1px solid #e1e1e1;}
+.navigation {  background: #fff;  /*height: 40px; text-align: right;  overflow: hidden;*/ border-bottom: 1px solid #e1e1e1;}
 .navigation ul {  list-style: none;  margin: 0; padding: 0;}
-.navigation ul li { cursor: pointer; float: left;  margin-right: 20px; font-size: emCalc(12px); color: #777;  line-height: 40px;  text-decoration: none;}
+.navigation ul li { cursor: pointer; float: left;  margin-right: 20px; margin-bottom: 0px; font-size: emCalc(12px); color: #777;  line-height: 40px;  text-decoration: none;}
 .navigation ul li.active {  color: #ee9999;}
 
 //////////////////////////////////////
 // CART NAVIGATION
 .navigation .cart {
-  font-size: emCalc(12px); color: #777;  line-height: 40px;  text-decoration: none;
+  font-size: emCalc(12px); 
+  color: #777;  
+  line-height: 40px;  
+  text-decoration: none;
+  float: right;
 }
+.navigation .cart.dorpdown {
+  position: relative;
+  display: inline-block;
+}
+.navigation .cart.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  padding: 12px 16px;
+  z-index: 9999;
+}
+
+.navigation .cart.dropdown:hover .dropdown-content, 
+.navigation .cart.dropdown .dropdown-content.active {
+  display: block;
+  left:auto;
+  right:0;
+  margin-right:-10px;
+}
+
 
 
 //////////////////////////////////////

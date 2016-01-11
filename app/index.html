@@ -46,8 +46,16 @@
               <li ng-repeat="item in items track by $index" class="item" ng-class="{'active': item.id == states.activeItem}" ng-click="changePage(item.id)">{{item.title}}</li>
             </ul>
           </div>
-          <div class="cart" ng-controller="ShopCartNavigationCtrl">
-            Cart: {{cartItemsTotalPrice | currency}} ({{cartItemsTotalItems}})
+          <div class="cart dropdown" ng-controller="ShopCartNavigationCtrl">
+              
+            <span>
+              Cart: {{cartItemsTotalPrice | currency}} ({{cartItemsTotalItems}})
+            </span>
+            
+            <div class="dropdown-content">
+              {{cartItemsMessage}}
+            </div>
+            
           </div>
         </div>
       </nav>
